@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>v2</title>
+
+    <style>
+        body{
+            background-color: white;
+        }
+
+        #draggable {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #dropTarget {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="draggable" draggable="true" >draggable</div>
+
+<div id="dropTarget" >drop target</div>
+
+</body>
+</html>
+
+<script type="module" >
+
+    const draggable = document.getElementById('draggable');
+    const dropTarget = document.getElementById('dropTarget');
+
+    draggable.addEventListener('dragstart', (event) => {
+        console.log('dragstart');
+    });
+
+    dropTarget.addEventListener('dragover', (event) => {
+        event.preventDefault()
+        console.log('dragover');
+    });
+
+    dropTarget.addEventListener('drop', (event) => {
+        console.log('drop');
+    });
+
+</script>
