@@ -35,10 +35,27 @@
 <script type="module" >
 
     const draggable = document.getElementById('draggable');
-    const dropTarget = document.getElementById('dropTarget');
 
     draggable.addEventListener('dragstart', (event) => {
         console.log('dragstart');
+    });
+
+    draggable.addEventListener("drag", (event) => {
+        console.log('drag');
+    });
+
+    draggable.addEventListener("dragend", (event) => {
+        console.log('dragend');
+    });
+
+    const dropTarget = document.getElementById('dropTarget');
+
+    dropTarget.addEventListener('dragenter', (event) => {
+        console.log('dragenter');
+    });
+
+    dropTarget.addEventListener('dragleave', (event) => {
+        console.log('dragleave');
     });
 
     dropTarget.addEventListener('dragover', (event) => {
